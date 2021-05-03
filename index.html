@@ -1,9 +1,27 @@
 <html>
+
 	<head>
+		<style>
+			body {
+			  background: #ffffff url('background.png');
+			  display: block;
+			  size: 50px;
+			  background-size: 1600px;
+			  background-repeat: no-repeat;
+			}
+			.font
+			{
+				color:#ffffff ;
+				font-size:x-large
+
+			}
+			
+		</style>
 		<link rel="stylesheet" type="text/css" href="welcome.css">
 		<script src="jquery-1.10.2.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script src="welcome.js"></script>
+		<script type="text/javascript" src="./app.js"></script>
 	</head>
 	<body>
 		<!--Menu -->
@@ -61,11 +79,96 @@
 
 
 
-		<div class="gameSettingPC" >
-			<form class="settings"  id="gameSettingPCDiv">
-				<input type="text" onkeydown="uniKeyCode1(event)">
-			</form>
-		</div>
+		<div class="gameSettingPC" id="gameSettingPCDiv" >
+			<div id="user_name" ></div>
+			<div id="score">
+				<label for="lblScore">SCORE:</label>
+				<input id="lblScore" type="text" />
+			</div>
+			<div id="Time">
+				<label for="lblTime">TIME:</label>
+				<input id="lblTime" type="text" />
+			</div>
+			<div id="hl"></div>
 		
+		
+			<p id="remain">
+				Remained 
+			</p> 
+			
+			<div>
+			<label class="font">Setting</label>
+			<p class="font" ><strong>Note:</strong> Type something in the text input box and press enter key.</p>   
+			<label class="font">Press key to go UP:</label>
+			<input id="up" class = "input" type="text" />
+			<label class="font">Press key to go DOWN:</label>
+			<input  id="down" class = "input" type="text" />
+			<label class="font">Press key to go LEFT:</label>
+			<input  id="left" class = "input" type="text" />
+			<label class="font">Press key to go RIGHT:</label>
+			<input  id="right" class = "input" type="text" />
+			<label class="font">Number of the balls (food) ( 50 - 90 ):</label>
+			<input id="balls" class = "input" type="text" />
+			<label class="font"> The Time (Minimum 60 seconds ) s :</label>
+			<input id="time" class = "input" type="text" />
+			<label class="font">Number of monsters ( 1 - 4 ):</label>
+			<input id="monsters" class = "input" type="text" />
+			<button onclick="myFunction()" class="button">Click me to insert random values</button>
+			<button onclick="Start()" class="button" >Start</button>
+			</div>
+			
+			<button id="playagain" onclick="setting()" class="button" style="display: none;">Play again</button>
+			
+			<div id="game" >
+			<canvas id="canvas" height="600" width="600" ></canvas>
+			</div>
+			
+			<div id="game setting" style="color:blue" >
+			<ul>
+				<li id = "U" ></li>
+				<li id = "D"></li>
+				<li id = "R"></li>
+				<li id = "L"></li>
+				<li id = "B"> </li>
+				<li id = "T"></li>
+				<li id = "M"></li>
+			  </ul>
+			</div>
+			
+			
+		</div>
+		  
+		<script> //hide 
+		document.getElementById("user_name").style.color = " #f3f3f3"  ;
+		document.getElementById("game").style.display = 'none';
+		document.getElementById("Time").style.display = 'none';
+		document.getElementById("score").style.display = 'none';
+		document.getElementById("game setting").style.display = 'none';
+		document.getElementById("hl").style.display = 'none';
+		
+		var down = 40
+		var right = 39
+		var up = 38
+		var left = 37
+		//press key ...
+    	$(document).on("keydown" , "input", function(e){
+        	if(this.id == "down"){
+				down=e.keyCode
+       		 }
+			if(this.id == "right"){
+				right=e.keyCode
+        	}
+			if(this.id == "up"){
+				up = e.keyCode
+       		 }
+			if(this.id == "left"){
+				left = e.keyCode
+        	}
+			if(e.keyCode==37 || e.keyCode==38 || e.keyCode==39 || e.keyCode==40 ){
+				this.value = e.key
+			}
+    	});
+			
+		</script>	
 	</body>
 </html>
