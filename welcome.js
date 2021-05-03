@@ -52,11 +52,13 @@ function isExist(){
     for (i = 0; i < users.length; i++) {
         if(users[i]==name && passes[i]==pass){
             temp=1;
-            var x = document.getElementById("welcomePCDiv");
+            var x = document.getElementById("gameSettingPCDiv");
             var y= document.getElementById(currentScreen);
+            var m=document.getElementById("divaa3");
+	        m.style.display="none";
             y.style.display="none";
             x.style.display = "flex";
-            currentScreen="welcomePCDiv";
+            currentScreen="gameSettingPCDiv";
         }
     }
     if(temp==0){
@@ -68,7 +70,6 @@ function isExist(){
 }
 
 function checkRegisteration(){
-    alert("hey");
 
     var uname=document.getElementById('registerUserName').value;
     var pass=document.getElementById('registerPass').value;
@@ -76,10 +77,6 @@ function checkRegisteration(){
     var birthday=document.getElementById('registerBirthday').value;
     var lName=document.getElementById('LasttName').value;
     var frstName= document.getElementById('fName').value;
-    
-    alert(uname +"+"+ pass +"+"+ eamil +"+"+ birthday +"+"+ lName +"+"+ frstName)
-
-    
     
 
     if(checkUserName(uname)  && checkFullName(frstName,lName) &&   
