@@ -1,21 +1,71 @@
-<!DOCTYPE html>
 <html>
 	<head>
-		<script src="./jquery-3.4.1.slim.min.js"></script>
-		<script type="text/javascript" src="./app.js"></script>
+		<link rel="stylesheet" type="text/css" href="welcome.css">
+		<script src="jquery-1.10.2.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="welcome.js"></script>
 	</head>
-
 	<body>
-		<div id="score">
-			<label for="lblScore">SCORE:</label>
-			<input id="lblScore" type="text" />
+		<!--Menu -->
+		<div id="divaa3">
+			<input id="btnc1" type="button" value="About"  onclick="changeAboutScreen()">
+			<input id="btnc2" type="button" value="Welcome"  onclick="changeWelcomeScreen()">
+			<input id="btnc3" type="button" value="Login"  onclick="changeLoginScreen()">
+			<input id="btnc4" type="button" value="Register"  onclick="changeRegisterScreen()">
+			<img id="img3" src="https://image.flaticon.com/icons/svg/32/32175.svg">      
+		
+	  </div>
+	  <script>
+		  
+	  </script>
+		<!--welcome -->
+		<div class="welcomePC" id="welcomePCDiv">
+			<img src="packmanIcon.png" alt="packman Icon" width="300" height="300">
+			<button class="btn"  onclick="changeLoginScreen()"><span class="btn-text">Login</span></button>
+			<button class="btn rounded" onclick="changeRegisterScreen()" ><span class="text-green">Register</span></button>
 		</div>
-		<div id="time">
-			<label for="lblTime">TIME:</label>
-			<input id="lblTime" type="text" />
+
+		<!--login -->
+		<div class="LoginPC"  >
+			<form class="login" id="LoginPCDiv">
+				<input id="Username" type="text" placeholder="Username">
+				<input id="password" type="password" placeholder="Password">
+				<button onclick="isExist()">Login</button>
+			</form>
 		</div>
-		<div id="game">
-			<canvas id="canvas" height="600" width="600"></canvas>
+
+		<!--register -->
+		<div class="RegisterPC" >
+			<form class="Register"  id="RegisterPCDiv">
+				<input id="registerUserName" type="text" placeholder="Username">
+				<input id="registerPass" type="password" placeholder="Password">
+				<input id="fName" type="text" placeholder="First Name">
+				<input id="LasttName" type="text" placeholder="Last Name">
+				<input id="registerEmail" type="email" placeholder="Email">
+				<input id="registerBirthday" type="date" placeholder="Birthday">
+				<button onclick="checkRegisteration()">Register</button>
+			</form>
 		</div>
+
+		<!--About-->
+		<dialog class="myDialogS" id="myDialog" >
+			<span  class="close" onclick="closeDialog()">&times;</span>
+			<h2 style="font-family: 'Times New Roman', Times, serif;">Salman Havaqa & Khalil mhajni Pacman</h3>
+			<p>we used Templater and jQuery too for check the Registerition information </p>
+			<p>salman: the hardest part was the connection between our parts because each one have different sleep hour because Ramadan and Yetro holiday</p>
+			<p>Khalil:  </p>
+			</br>
+			<button id="closeButton" onclick="closeDialog()">close </button>
+		</dialog>
+
+
+
+
+		<div class="gameSettingPC" >
+			<form class="settings"  id="gameSettingPCDiv">
+				<input type="text" onkeydown="uniKeyCode1(event)">
+			</form>
+		</div>
+		
 	</body>
 </html>
