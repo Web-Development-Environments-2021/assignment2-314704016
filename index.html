@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <html>
 
 	<head>
@@ -183,4 +184,191 @@
 
 
 	</body>
+=======
+<html>
+
+	<head>
+		<style>
+			body {
+			  background: #ffffff url('background.png');
+			  display: block;
+			  size: 50px;
+			  background-size: 1600px;
+			  background-repeat: no-repeat;
+			}
+			.font
+			{
+				color:#ffffff ;
+				font-size:x-large
+
+			}
+			
+		</style>
+		<link rel="stylesheet" type="text/css" href="welcome.css">
+		<script src="jquery-1.10.2.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="welcome.js"></script>
+		<script type="text/javascript" src="./app.js"></script>
+	</head>
+	<body>
+		<!--Menu -->
+		<div id="divaa3">
+			<input id="btnc1" type="button" value="About"  onclick="changeAboutScreen()">
+			<input id="btnc2" type="button" value="Welcome"  onclick="changeWelcomeScreen()">
+			<input id="btnc3" type="button" value="Login"  onclick="changeLoginScreen()">
+			<input id="btnc4" type="button" value="Register"  onclick="changeRegisterScreen()">
+			<img id="img3" src="https://image.flaticon.com/icons/svg/32/32175.svg">      
+	  </div>
+	  <script>
+		  
+	  </script>
+		<!--welcome -->
+		<div class="welcomePC" id="welcomePCDiv">
+			<img src="packmanIcon.png" alt="packman Icon" width="300" height="300">
+			<button class="btn"  onclick="changeLoginScreen()"><span class="btn-text">Login</span></button>
+			<button class="btn rounded" onclick="changeRegisterScreen()" ><span class="text-green">Register</span></button>
+		</div>
+
+		<!--login -->
+		<div class="LoginPC"  >
+			<form class="login" id="LoginPCDiv">
+				<input id="Username" type="text" placeholder="Username">
+				<input id="password" type="password" placeholder="Password">
+				<button onclick="isExist()">Login</button>
+			</form>
+		</div>
+
+		<!--register -->
+		<div class="RegisterPC" >
+			<form class="Register"  id="RegisterPCDiv">
+				<input id="registerUserName" type="text" placeholder="Username">
+				<input id="registerPass" type="password" placeholder="Password">
+				<input id="fName" type="text" placeholder="First Name">
+				<input id="LasttName" type="text" placeholder="Last Name">
+				<input id="registerEmail" type="email" placeholder="Email">
+				<input id="registerBirthday" type="date" placeholder="Birthday">
+				<button onclick="checkRegisteration()">Register</button>
+			</form>
+		</div>
+
+		<!--About-->
+		<dialog class="myDialogS" id="myDialog" >
+			<span  class="close" onclick="closeDialog()">&times;</span>
+			<h2 style="font-family: 'Times New Roman', Times, serif;">Salman Havaqa & Khalil mhajni Pacman</h3>
+			<p>we used Templater and jQuery too for check the Registerition information and get the keys from the user </p>
+			<p> the hardest part was the connection between our parts because each one have different sleep hour because Ramadan and Yetro holiday</p>
+			</br>
+			<button id="closeButton" onclick="closeDialog()">close </button>
+		</dialog>
+
+
+
+
+		<div class="gameSettingPC" id="gameSettingPCDiv" style="display: none;flex-direction: column">
+			<div id="user_name" >
+			</div>
+			<div id="score">
+			  <label for="lblScore">SCORE:</label>
+			  <input id="lblScore" type="text" />
+		  </div>
+		  <div id="Time">
+			  <label for="lblTime">TIME:</label>
+			  <input id="lblTime" type="text" />
+		  </div>
+		  <div id="hl">
+			  <p id="remain">
+				  Remained 
+			  </p>
+			  
+		  </div>
+			<label class="font">Setting</label>
+		  <p class="font" ><strong>Note:</strong> Type something in the text input box and press enter key.</p>   
+		  <div>
+			  <label class="font">Press key to go UP:</label>
+			  <input id="up" class = "input" type="text" />
+		  </div>
+		  <div>
+			  <label class="font">Press key to go DOWN:</label>
+			  <input  id="down" class = "input" type="text" />
+		  </div>
+		  <div>
+			  <label class="font">Press key to go LEFT:</label>
+			  <input  id="left" class = "input" type="text" />
+		  </div>
+		  
+		  <div>
+			  <label class="font">Press key to go RIGHT:</label>
+			  <input  id="right" class = "input" type="text" />
+		  </div>
+		  <div>
+			  <label class="font">Number of the balls (food) ( 50 - 90 ):</label>
+			  <input id="balls" class = "input" type="text" />
+		  </div>
+		  <div>
+			  <label class="font"> The Time (Minimum 60 seconds ) s :</label>
+			  <input id="time" class = "input" type="text" />
+		  </div>
+		  <div>
+			  <label class="font">Number of monsters ( 1 - 4 ):</label>
+			  <input id="monsters" class = "input" type="text" />
+		  </div>
+		  
+		  <button onclick="myFunction()" class="button">Click me to insert random values</button>
+		  <button onclick="Start()" class="button" >Start</button>
+		  <button id="playagain" onclick="setting()" class="button" style="display: none;">Play again</button>
+		  
+		  <div id="game" >
+			  <canvas id="canvas" height="600" width="600" ></canvas>
+		  </div>
+		  <div id="game setting" style="color:blue;"  >
+			  <ul>
+				  <li id = "U" ></li>
+				  <li id = "D"></li>
+				  <li id = "R"></li>
+				  <li id = "L"></li>
+				  <li id = "B"> </li>
+				  <li id = "T"></li>
+				  <li id = "M"></li>
+				</ul>
+		  </div>
+		  
+		  
+		  <script> //hide 
+		  document.getElementById("user_name").style.color = " #f3f3f3"  ;
+		  document.getElementById("game").style.display = 'none';
+		  document.getElementById("Time").style.display = 'none';
+		  document.getElementById("score").style.display = 'none';
+		  document.getElementById("game setting").style.display = 'none';
+		  document.getElementById("hl").style.display = 'none';
+		  
+		  var down = 40
+		  var right = 39
+		  var up = 38
+		  var left = 37
+		  //press key ...
+		  $(document).on("keydown" , "input", function(e){
+			  if(this.id == "down"){
+				  down=e.keyCode
+				  }
+			  if(this.id == "right"){
+				  right=e.keyCode
+			  }
+			  if(this.id == "up"){
+				  up = e.keyCode
+				  }
+			  if(this.id == "left"){
+				  left = e.keyCode
+			  }
+			  if(e.keyCode==37 || e.keyCode==38 || e.keyCode==39 || e.keyCode==40 ){
+				  this.value = e.key
+			  }
+		  });
+			  
+  </script>
+		</div>
+		
+
+
+	</body>
+>>>>>>> 377bafdf5a0c25e66bf00f10a11a61415d53ba0b
 </html>
